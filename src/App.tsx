@@ -1,20 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './Home'
 
-import LocalButton from './Button'
+import './App.css'
 
-const Codemirror = React.lazy(() => import('app2/Codemirror'))
-
-function App() {
-  return (
-    <div>
-      <h1>Bi-Directional</h1>
-      <h2>App 1</h2>
-      <LocalButton />
-      <React.Suspense fallback="Loading Button">
-        <Codemirror />
-      </React.Suspense>
-    </div>
-  )
-}
+const App = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
+  </BrowserRouter>
+)
 
 export default App
